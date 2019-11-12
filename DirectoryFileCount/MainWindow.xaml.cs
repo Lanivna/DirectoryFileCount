@@ -24,5 +24,21 @@ namespace DirectoryFileCount
         {
             InitializeComponent();
         }
+
+        private void Log_In(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Create_Account(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignBackground}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="CloseCommandHandler"/>
+    </Window.CommandBindings>
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="89,42,0,0" TextWrapping="Wrap" Text="Hi there! Please, log in to the system or create a new account;)" VerticalAlignment="Top" Width="628" FontSize="20" FontWeight="Bold"/>
+        <Button Content="I have an account" HorizontalAlignment="Left" Height="88" Margin="89,134,0,0" VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Log_In"/>
+        <Button Content="Let's create one!" HorizontalAlignment="Left" Margin="500,134,0,0" Height="88"  VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Create_Account"/>
+        <Button Content="Where is exit?" HorizontalAlignment="Left" Height="29" Margin="608,355,0,0" VerticalAlignment="Top" Width="150" Command="ApplicationCommands.Close"/>
+
     </Grid>
 </Window>
