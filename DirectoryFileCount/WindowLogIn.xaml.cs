@@ -24,9 +24,16 @@ namespace DirectoryFileCount
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void ShowProfile(object sender, RoutedEventArgs e)
+        {
+            UserWindow userWindow = new UserWindow();
+            userWindow.Show();
+        }
+
+        private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
