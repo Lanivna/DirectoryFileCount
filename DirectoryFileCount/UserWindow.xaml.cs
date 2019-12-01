@@ -60,5 +60,10 @@ namespace DirectoryFileCount
 
 
         }
+
+        private void btnShowHistory(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
