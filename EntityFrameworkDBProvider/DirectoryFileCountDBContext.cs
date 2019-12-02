@@ -7,7 +7,6 @@ namespace DirectoryFileCount.EntityFrameworkDBProvider
 {
     public class DirectoryFileCountDBContext : DbContext
     {
-        //public DirectoryFileCountDBContext() : base(@"Server=KIYVMANAGERSURF\ARTSYLPRODUCTS10;Integrated security = true;database=DirectoryFileCountSimulator")
         public DirectoryFileCountDBContext() : base("DB")
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DirectoryFileCountDBContext, Configuration>());

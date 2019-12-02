@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-//using DirectoryFileCount.Tools;
-
 namespace DirectoryFileCount.DBModels
 {
     [DataContract(IsReference = true)]

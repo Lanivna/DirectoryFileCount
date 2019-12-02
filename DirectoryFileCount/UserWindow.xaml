@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
         Title="Your profile" Height="450" Width="800"
-        Icon="C:\Users\user\source\repos\DirectoryFileCount\DirectoryFileCount\Media\icon.ico"
+        Icon="Media/icon.ico"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
