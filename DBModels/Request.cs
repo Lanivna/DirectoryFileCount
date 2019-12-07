@@ -16,6 +16,8 @@ namespace DirectoryFileCount.DBModels
         [DataMember]
         private int _quantityOfSubFolders;
         [DataMember]
+        private double _totalFilesSize;
+        [DataMember]
         private DateTime _dateOfRequest;
         [DataMember]
         private Guid _userGuid;
@@ -65,6 +67,11 @@ namespace DirectoryFileCount.DBModels
             set => _userGuid = value;
         }
 
+        public Request()
+        {
+
+        }
+
         public Request(string pathToFolder) : this()
         {
             _guid = Guid.NewGuid();
@@ -72,9 +79,13 @@ namespace DirectoryFileCount.DBModels
             _dateOfRequest = DateTime.Today;
         }
 
-        public Request()
+        public Request(string pathToFolder, int quantityOfFiles, int quantityOfSubFolders, double totalFilesSize, DateTime dateOfRequest)
         {
-
+            _guid = Guid.NewGuid();
+            _pathToFolder = pathToFolder;
+            _quantityOfFiles = quantityOfFiles;
+            _quantityOfSubFolders = quantityOfSubFolders;
+            _totalFilesSize = totalFilesSize;
         }
     }
 }

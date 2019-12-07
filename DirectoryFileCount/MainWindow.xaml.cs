@@ -15,13 +15,13 @@ namespace DirectoryFileCount
 
         private void Log_In(object sender, RoutedEventArgs e)
         {
-            WindowLogIn secondWindow = new WindowLogIn();
+            SignInView secondWindow = new SignInView();
             secondWindow.Show();
         }
 
         private void Create_Account(object sender, RoutedEventArgs e)
         {
-            WindowCreateAccount thirdWindow = new WindowCreateAccount();
+            SignUpView thirdWindow = new SignUpView();
             thirdWindow.Show();
         }
 

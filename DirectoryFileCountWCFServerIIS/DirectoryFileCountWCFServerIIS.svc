@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="DirectoryFileCountWCFServerIIS.Service1" CodeBehind="DirectoryFileCountWCFServerIIS.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DirectoryFileCount.Server.DirectoryFileCountWCFServerIIS.DirectoryFileCountWCFServerIIS" CodeBehind="DirectoryFileCountWCFServerIIS.svc.cs" %>

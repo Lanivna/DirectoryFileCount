@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Windows;
 using System.IO;
-
+using System.Windows;
 using WinForms = System.Windows.Forms;
+using DirectoryFileCount.ViewModels;
 
 namespace DirectoryFileCount
 {
-    /// <summary>
-    /// Interaction logic for UserWindow.xaml
-    /// </summary>
-    public partial class UserWindow : Window
+    public partial class UserRequestView
     {
-        public UserWindow()
+        public UserRequestView()
         {
             InitializeComponent();
+            DataContext = new UserRequestViewModel();
         }
 
+        //TO DO - change logic to ViewModel
         private void btnSelectFolderClick(object sender, RoutedEventArgs e)
         {
             WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
@@ -39,7 +38,7 @@ namespace DirectoryFileCount
                     {
                         String sDate = fileInfo.CreationTime.ToString("yyyy-MM-dd");
                         //Debug.WriteLine("#Debug: File: " + fileInfo.Name + "Date: " + sDate);
-                        //TO DO: count the size and amount of files + subfolders and show them in textblock of UserWindow
+                        //TO DO: count the size and amount of files + subfolders and show them in textblock of RequestWindow
                     }
                 }
             }
