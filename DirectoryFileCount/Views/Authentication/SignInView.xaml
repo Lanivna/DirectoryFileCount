@@ -13,7 +13,7 @@
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="67,64,0,0" TextWrapping="Wrap" Text="Your login:" VerticalAlignment="Top" Width="170"/>
-        <TextBox HorizontalAlignment="Left" Height="41" Margin="67,87,0,0" TextWrapping="Wrap" Text="Enter your email/phone number or whatever" VerticalAlignment="Top" Width="305" Opacity="0.5" FontSize="12"/>
+        <TextBox HorizontalAlignment="Left" Height="41" Margin="67,87,0,0" TextWrapping="Wrap" Text="Enter your email/phone number or whatever" VerticalAlignment="Top" Width="305" Opacity="0.5" FontSize="12" GotFocus="TextBox_GotFocus"/>
         <Label Content="Your Password:" HorizontalAlignment="Left" Margin="67,159,0,0" VerticalAlignment="Top" Width="137"/>
         <PasswordBox HorizontalAlignment="Left" Height="38" Margin="67,186,0,0" VerticalAlignment="Top" Width="305" Opacity="0.5"/>
         <Button Content="All good!" HorizontalAlignment="Left" Height="44" Margin="158,264,0,0" VerticalAlignment="Top" Width="149" />

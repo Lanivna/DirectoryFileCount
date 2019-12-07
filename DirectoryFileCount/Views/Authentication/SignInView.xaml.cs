@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using DirectoryFileCount.ViewModels;
 
 namespace DirectoryFileCount
@@ -9,6 +10,13 @@ namespace DirectoryFileCount
         {
             InitializeComponent();
             DataContext = new SignInViewModel();
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= TextBox_GotFocus;
         }
     }
 }
