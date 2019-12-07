@@ -39,7 +39,7 @@ namespace DirectoryFileCount.Managers
 
         internal async void Navigate(ViewType viewType)
         {
-            if (viewType == ViewType.SignIn && !string.IsNullOrEmpty(StationManager.CurrentLocalUser.Login))
+            if (viewType == ViewType.SignIn && !string.IsNullOrEmpty(StationManager.CurrentLocalUser.Email))
             {
                 LoaderManager.Instance.ShowLoader();
                 var result = await Task.Run(() =>
@@ -48,26 +48,27 @@ namespace DirectoryFileCount.Managers
                     User currentUser;
                     try
                     {
-                   //     currentUser = StationManager.Client.GetUser(StationManager.CurrentLocalUser.Login);
+                        currentUser = StationManager.Client.GetUserByEmail(StationManager.CurrentLocalUser.Email);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Sign In failed for user {StationManager.CurrentLocalUser.Login}. Reason:{Environment.NewLine}{ex.Message}");
+                        MessageBox.Show($"Sign In failed for user {StationManager.CurrentLocalUser.Email}. Reason:{Environment.NewLine}{ex.Message}");
                         return false;
                     }
-                /*    if (currentUser == null)
+
+                    if (currentUser == null)
                     {
                         MessageBox.Show(
-                            $"Sign In failed for user {StationManager.CurrentLocalUser.Login}. Reason:{Environment.NewLine}User does not exist.");
+                            $"Sign In failed for user {StationManager.CurrentLocalUser.Email}. Reason:{Environment.NewLine}User does not exist.");
                         return false;
-                    } */
+                    }
                     //if (!currentUser.CheckPassword(_password))
                     //{
-                    //    MessageBox.Show($"Sign In failed for user {_login}. Reason:{Environment.NewLine}Wrong Password.");
+                    //    MessageBox.Show($"Sign In failed for user {_email}. Reason:{Environment.NewLine}Wrong Password.");
                     //    return false;
                     //}
               //      StationManager.CurrentUser = currentUser;
-                    MessageBox.Show($"Sign In successful for user {StationManager.CurrentLocalUser.Login}.");
+                    MessageBox.Show($"Sign In successful for user {StationManager.CurrentLocalUser.Email}.");
                     return true;
                 });
                 LoaderManager.Instance.HideLoader();

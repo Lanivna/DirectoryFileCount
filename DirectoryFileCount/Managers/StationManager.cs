@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DirectoryFileCount.DataStorage;
 using DirectoryFileCount.DBModels;
+using DirectoryFileCount.DirectoryFileCountWCFServer;
 using DirectoryFileCount.Models;
 
 namespace DirectoryFileCount
@@ -9,8 +10,8 @@ namespace DirectoryFileCount
     internal static class StationManager
     {
         public static event Action StopThreads;
-
-    //  private static DirectoryFileCountServiceClient _client;
+     
+        private static DirectoryFileCountSimulatorClient _client;
 
         private static IDataStorage _dataStorage;
 
@@ -23,25 +24,25 @@ namespace DirectoryFileCount
 
         internal static UserLocal CurrentLocalUser { get; set; }
 
-      /*  public static DirectoryFileCountServiceClient Client
-        {
-            get
-            {
-                return _client;
-            }
-            set
-            {
-                _client = value;
-            }
-        } */
+          public static DirectoryFileCountSimulatorClient Client
+          {
+              get
+              {
+                  return _client;
+              }
+              set
+              {
+                  _client = value;
+              }
+          }
 
 
-       /* internal static void Initialize(DirectoryFileCountServiceClient client, IDataStorage dataStorage)
-        {
-            _client = client;
-            _dataStorage = dataStorage;
-            CurrentLocalUser = _dataStorage.CurrentUser;
-        } */
+         internal static void Initialize(DirectoryFileCountSimulatorClient client, IDataStorage dataStorage)
+         {
+             _client = client;
+             _dataStorage = dataStorage;
+             CurrentLocalUser = _dataStorage.CurrentUser;
+         }
 
         internal static void CloseApp()
         {

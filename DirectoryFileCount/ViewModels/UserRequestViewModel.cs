@@ -81,7 +81,7 @@ namespace DirectoryFileCount.ViewModels
                         UserGuid = StationManager.CurrentUser.Guid
                     };
                     StationManager.CurrentUser.Requests.Add(request);
-           //         StationManager.Client.AddRequest(request);
+                    StationManager.Client.AddRequest(request);
                 }
                 catch (Exception ex)
                 {
@@ -95,7 +95,7 @@ namespace DirectoryFileCount.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-       // [NotifyPropertyChangedInvocator]
+        //[NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -114,11 +114,11 @@ namespace DirectoryFileCount.ViewModels
                         MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} Email {_email} is not valid.");
                         return false;
                     }
-                 /*   if (StationManager.Client.UserExists(_email))
+                    if (StationManager.Client.UserExists(_email))
                     {
-                        MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} User with such login already exists.");
+                        MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} User with such email already exists.");
                         return false;
-                    }*/
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -128,7 +128,7 @@ namespace DirectoryFileCount.ViewModels
                 try
                 {
                     var user = new User(_firstName, _lastName, _email, _password);
-              //      StationManager.Client.AddUser(user);
+                    StationManager.Client.AddUser(user);
                     StationManager.CurrentUser = user;
                     StationManager.CurrentLocalUser = new UserLocal(_email); //, _password
                 }

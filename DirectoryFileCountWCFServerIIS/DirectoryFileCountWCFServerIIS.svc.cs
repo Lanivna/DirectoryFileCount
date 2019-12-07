@@ -25,9 +25,9 @@ namespace DirectoryFileCount.Server.DirectoryFileCountWCFServerIIS
             return service.GetAllUsers();
         }
 
-        public bool UserExists(string login)
+        public bool UserExists(string email)
         {
-            return service.UserExists(login);
+            return service.UserExists(email);
         }
 
         public User GetUserByEmail(string email)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d5d4aa48-c6d5-4aeb-b2a3-35617bb9cd19" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DirectoryFileCountWCFServerIIS.xsd" MetadataType="Schema" ID="b843b527-372c-45b9-8bce-18633a170a8a" SourceId="1" SourceUrl="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc?xsd=xsd2" />
+    <MetadataFile FileName="DirectoryFileCountWCFServerIIS1.xsd" MetadataType="Schema" ID="7b9d2658-4aac-4327-81f7-1f19cb7c861b" SourceId="1" SourceUrl="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc?xsd=xsd0" />
+    <MetadataFile FileName="DirectoryFileCountWCFServerIIS2.xsd" MetadataType="Schema" ID="decdb997-1399-4083-a515-5e1619899fe2" SourceId="1" SourceUrl="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc?xsd=xsd1" />
+    <MetadataFile FileName="DirectoryFileCountWCFServerIIS.wsdl" MetadataType="Wsdl" ID="72bc1d1f-8561-4073-babf-38bbd70befbc" SourceId="1" SourceUrl="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc?wsdl" />
+    <MetadataFile FileName="DirectoryFileCountWCFServerIIS.disco" MetadataType="Disco" ID="039c6786-9d18-408b-ae83-7fbc6b797316" SourceId="1" SourceUrl="http://localhost:51863/DirectoryFileCountWCFServerIIS.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

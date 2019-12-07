@@ -6,20 +6,20 @@ namespace DirectoryFileCount.Models
     internal class UserLocal
     {
         #region Fields
-        private string _login;
+        private string _email;
         //private string _password;
         #endregion
 
         #region Properties
-        public string Login
+        public string Email
         {
             get
             {
-                return _login;
+                return _email;
             }
             private set
             {
-                _login = value;
+                _email = value;
             }
         }
         //private string Password
@@ -32,16 +32,16 @@ namespace DirectoryFileCount.Models
         #endregion
 
         #region Constructors
-        public UserLocal(string login) //, string password
+        public UserLocal(string email) //, string password
         {
-            _login = login;
+            _email = email;
             //_password = password;
             //SetPassword(password);
         }
 
         public UserLocal()
         {
-            _login = "";
+            _email = "";
             //_password = "";
             //SetPassword(password);
         }

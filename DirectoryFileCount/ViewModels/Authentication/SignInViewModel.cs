@@ -13,7 +13,7 @@ namespace DirectoryFileCount.ViewModels
     internal class SignInViewModel : BaseViewModel
     {
         #region Fields
-        private string _login;
+        private string _email;
         private string _password;
 
         #region Commands
@@ -24,12 +24,12 @@ namespace DirectoryFileCount.ViewModels
         #endregion
 
         #region Properties
-        public string Login
+        public string Email
         {
-            get { return _login; }
+            get { return _email; }
             set
             {
-                _login = value;
+                _email = value;
                 OnPropertyChanged();
             }
         }
@@ -74,7 +74,7 @@ namespace DirectoryFileCount.ViewModels
         #endregion
         private bool CanSignInExecute(object obj)
         {
-            return !String.IsNullOrWhiteSpace(_login) && !String.IsNullOrWhiteSpace(_password);
+            return !String.IsNullOrWhiteSpace(_email) && !String.IsNullOrWhiteSpace(_password);
         }
 
         private async void SignInImplementation(object obj)
@@ -86,27 +86,28 @@ namespace DirectoryFileCount.ViewModels
                 User currentUser;
                 try
                 {
-               //     currentUser = StationManager.Client.GetUser(_login);
+                    currentUser = StationManager.Client.GetUserByEmail(_email);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Sign In failed for user {_login}. Reason:{Environment.NewLine}{ex.Message}");
+                    MessageBox.Show($"Sign In failed for user {_email}. Reason:{Environment.NewLine}{ex.Message}");
                     return false;
                 }
-           /*     if (currentUser == null)
+
+                if (currentUser == null)
                 {
                     MessageBox.Show(
-                        $"Sign In failed for user {_login}. Reason:{Environment.NewLine}User does not exist.");
+                        $"Sign In failed for user {_email}. Reason:{Environment.NewLine}User does not exist.");
                     return false;
-                } */
+                }
                 //if (!currentUser.CheckPassword(_password))
                 //{
-                //    MessageBox.Show($"Sign In failed for user {_login}. Reason:{Environment.NewLine}Wrong Password.");
+                //    MessageBox.Show($"Sign In failed for user {_email}. Reason:{Environment.NewLine}Wrong Password.");
                 //    return false;
                 //}
-             //   StationManager.CurrentUser = currentUser;
-                StationManager.CurrentLocalUser = new UserLocal(_login); //, _password
-                MessageBox.Show($"Sign In successful for user {_login}.");
+                StationManager.CurrentUser = currentUser;
+                StationManager.CurrentLocalUser = new UserLocal(_email); //, _password
+                MessageBox.Show($"Sign In successful for user {_email}.");
                 return true;
             });
             LoaderManager.Instance.HideLoader();

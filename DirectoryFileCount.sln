@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryFileCount", "DirectoryFileCount\DirectoryFileCount.csproj", "{3749F76C-D9C0-4688-A20D-37D29C8FE0ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C7463B56-3DAC-403C-8A63-FDF43A8C0FA2} = {C7463B56-3DAC-403C-8A63-FDF43A8C0FA2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModels", "DBModels\DBModels.csproj", "{8AD649C6-D854-400F-87F4-56BE732E6E0D}"
 EndProject
