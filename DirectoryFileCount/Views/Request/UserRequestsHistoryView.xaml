@@ -1,4 +1,4 @@
-﻿<Window x:Class="DirectoryFileCount.UserRequestsHistoryView"
+﻿<UserControl x:Class="DirectoryFileCount.UserRequestsHistoryView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,8 +6,6 @@
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
-        Title="Your profile" Height="450" Width="800"
-        Icon="icon.ico"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
@@ -26,4 +24,4 @@
         </DataGrid>
         
     </Grid>
-</Window>
+</UserControl>

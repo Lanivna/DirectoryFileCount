@@ -1,10 +1,11 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using DirectoryFileCount.Navigation;
 using DirectoryFileCount.ViewModels;
 
 namespace DirectoryFileCount
 {
-    public partial class SignInView : Window
+    public partial class SignInView : UserControl, INavigatable
     {
         internal SignInView()
         {

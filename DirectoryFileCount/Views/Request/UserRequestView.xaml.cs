@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
 using DirectoryFileCount.ViewModels;
 
 namespace DirectoryFileCount
 {
-    public partial class UserRequestView
+    public partial class UserRequestView : UserControl
     {
         public UserRequestView()
         {

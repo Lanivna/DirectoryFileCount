@@ -10,7 +10,7 @@ using DirectoryFileCount.Navigation;
 
 namespace DirectoryFileCount.ViewModels
 {
-    internal class SignInViewModel : BaseViewModel
+    internal class SignInViewModel : BasicViewModel
     {
         #region Fields
         private string _email;
@@ -18,7 +18,7 @@ namespace DirectoryFileCount.ViewModels
 
         #region Commands
         private ICommand _signInCommand;
-        private ICommand _toSignUpCommand;
+        private ICommand _signUpCommand;
         private ICommand _closeCommand;
         #endregion
         #endregion
@@ -58,7 +58,7 @@ namespace DirectoryFileCount.ViewModels
         {
             get
             {
-                return _toSignUpCommand ?? (_toSignUpCommand = new RelayCommand<object>(ToSignUpImplementation));
+                return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation));
             }
         }
 
@@ -110,18 +110,25 @@ namespace DirectoryFileCount.ViewModels
                 MessageBox.Show($"Sign In successful for user {_email}.");
                 return true;
             });
+
+            Email = "";
+            Password = "";
             LoaderManager.Instance.HideLoader();
             if (result)
                 NavigationManager.Instance.Navigate(ViewType.Main);
         }
 
-        private void ToSignUpImplementation(object obj)
+        private void SignUpImplementation(object obj)
         {
+            Email = "";
+            Password = "";
             NavigationManager.Instance.Navigate(ViewType.SignUp);
         }
 
         private void CloseImplementation(object obj)
         {
+            Email = "";
+            Password = "";
             StationManager.CloseApp();
         }
 

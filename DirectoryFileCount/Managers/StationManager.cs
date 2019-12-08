@@ -48,7 +48,7 @@ namespace DirectoryFileCount
         {
             StationManager.DataStorage.ChangeUser(CurrentLocalUser);
             StationManager.DataStorage.SaveCurrentUser();
-            MessageBox.Show("ShutDown");
+            MessageBox.Show("Closing");
             StopThreads?.Invoke();
             Environment.Exit(1);
         }

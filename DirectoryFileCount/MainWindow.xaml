@@ -6,24 +6,21 @@
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Icon="Media\icon.ico"
+        Icon="icon.ico"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
-    <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close"
-                        Executed="CloseCommandHandler"/>
-    </Window.CommandBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="73*"/>
             <ColumnDefinition Width="720*"/>
         </Grid.ColumnDefinitions>
+        <ContentControl Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ContentControl>
         <TextBlock HorizontalAlignment="Left" Height="28" Margin="15.8,42,0,0" TextWrapping="Wrap" Text="Hi there! Please, log in to the system or create a new account;)" VerticalAlignment="Top" Width="628" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
-        <Button Content="I have an account" HorizontalAlignment="Left" Height="88" Margin="15.8,134,0,0" VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Log_In" Grid.Column="1"/>
-        <Button Content="Let's create one!" HorizontalAlignment="Left" Margin="426.8,134,0,0" Height="88"  VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Create_Account" Grid.Column="1"/>
+        <Button Content="I have an account" HorizontalAlignment="Left" Height="88" Margin="15.8,134,0,0" VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Grid.Column="1"/>
+        <Button Content="Let's create one!" HorizontalAlignment="Left" Margin="426.8,134,0,0" Height="88"  VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Grid.Column="1"/>
         <Button Content="Where is exit?" HorizontalAlignment="Left" Height="29" Margin="534.8,355,0,0" VerticalAlignment="Top" Width="150" Command="ApplicationCommands.Close" Grid.Column="1"/>
 
     </Grid>

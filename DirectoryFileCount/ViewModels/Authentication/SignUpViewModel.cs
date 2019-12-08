@@ -12,7 +12,7 @@ using DirectoryFileCount.Navigation;
 namespace DirectoryFileCount.ViewModels
 {
 
-    internal class SignUpViewModel : BaseViewModel
+    internal class SignUpViewModel : BasicViewModel
     {
         #region Fields
         private string _password;
@@ -22,7 +22,7 @@ namespace DirectoryFileCount.ViewModels
 
         #region Commands
         private ICommand _signUpCommand;
-        private ICommand _toSignInCommand;
+        private ICommand _signInCommand;
         private ICommand _closeCommand;
         #endregion
         #endregion
@@ -75,11 +75,11 @@ namespace DirectoryFileCount.ViewModels
             }
         }
 
-        public ICommand ToSignInCommand
+        public ICommand SignInCommand
         {
             get
             {
-                return _toSignInCommand ?? (_toSignInCommand = new RelayCommand<object>(ToSignInImplementation));
+                return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation));
             }
         }
 
@@ -93,6 +93,10 @@ namespace DirectoryFileCount.ViewModels
 
         #endregion
         #endregion
+
+        internal SignUpViewModel()
+        {
+        }
         private bool CanSignUpExecute(object obj)
         {
             return !String.IsNullOrEmpty(_password) &&
@@ -112,17 +116,23 @@ namespace DirectoryFileCount.ViewModels
                     if (!new EmailAddressAttribute().IsValid(_email))
                     {
                         MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} Email {_email} is not valid.");
+                        Email = "";
                         return false;
                     }
                     if (StationManager.Client.UserExists(_email))
                     {
                         MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} User with such email already exists.");
+                        Email = "";
                         return false;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Sign Up failed for user {_email}. Reason:{Environment.NewLine} {ex.Message}");
+                    Email = "";
+                    Password = "";
+                    FirstName = "";
+                    LastName = "";
                     return false;
                 }
                 try
@@ -138,6 +148,10 @@ namespace DirectoryFileCount.ViewModels
                     return false;
                 }
                 MessageBox.Show($"User {_email} was successfully created.");
+                Email = "";
+                Password = "";
+                FirstName = "";
+                LastName = "";
                 return true;
             });
             LoaderManager.Instance.HideLoader();
@@ -145,13 +159,21 @@ namespace DirectoryFileCount.ViewModels
                 NavigationManager.Instance.Navigate(ViewType.Main);
         }
 
-        private void ToSignInImplementation(object obj)
+        private void SignInImplementation(object obj)
         {
+            Email = "";
+            Password = "";
+            FirstName = "";
+            LastName = "";
             NavigationManager.Instance.Navigate(ViewType.SignIn);
         }
 
         private void CloseImplementation(object obj)
         {
+            Email = "";
+            Password = "";
+            FirstName = "";
+            LastName = "";
             StationManager.CloseApp();
         }
 

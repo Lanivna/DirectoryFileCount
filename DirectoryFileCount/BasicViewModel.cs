@@ -3,13 +3,12 @@ using System.Runtime.CompilerServices;
 
 namespace DirectoryFileCount
 {
-    internal abstract class BaseViewModel : INotifyPropertyChanged
+    internal abstract class BasicViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        // [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
