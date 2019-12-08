@@ -100,7 +100,7 @@ namespace DirectoryFileCount.ViewModels
                         $"Sign In failed for user {_email}. Reason:{Environment.NewLine} User does not exist.");
                     return false;
                 }
-              /*  if (!currentUser.CheckPassword(_password))
+                /* if (!currentUser.CheckPassword(_password))
                 {
                    MessageBox.Show($"Sign In failed for user {_email}. Reason:{Environment.NewLine} Wrong Password.");
                    return false;

@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using DirectoryFileCount.DataStorage;
 using DirectoryFileCount.DirectoryFileCountWCFServer;
 using DirectoryFileCount.Managers;
@@ -12,8 +11,7 @@ namespace DirectoryFileCount
 {
     public partial class MainWindow : Window, IContentOwner, INavigatable
     {
-        
-         public ContentControl ContentControl
+        public ContentControl ContentControl
          {
              get { return _contentControl; }
          }

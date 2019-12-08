@@ -8,9 +8,6 @@ namespace DirectoryFileCount.ViewModels
     class UserRequestHistoryViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<Request> _requests;
-        //private Thread _workingThread;
-        //private CancellationToken _token;
-        //private CancellationTokenSource _tokenSource;
 
         public ObservableCollection<Request> Requests
         {

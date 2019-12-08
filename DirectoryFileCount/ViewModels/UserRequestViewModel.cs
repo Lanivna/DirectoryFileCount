@@ -104,7 +104,6 @@ namespace DirectoryFileCount.ViewModels
 
         private int CountFiles()
         {
-            //Counting files in directory
             int fileCount = Directory.EnumerateFiles(PathToFolder, "*.*", SearchOption.AllDirectories).Count();
             int numberOfFiles = fileCount;
             return numberOfFiles;
@@ -112,7 +111,6 @@ namespace DirectoryFileCount.ViewModels
 
         private int CountSubFolders()
         {
-            //Counting subfolders
             int subCount = Directory.EnumerateDirectories(PathToFolder, "*", SearchOption.AllDirectories).Count();
             int numberOfSubFolders = subCount; 
             return numberOfSubFolders;
