@@ -62,12 +62,12 @@ namespace DirectoryFileCount.Managers
                             $"Sign In failed for user {StationManager.CurrentLocalUser.Email}. Reason:{Environment.NewLine}User does not exist.");
                         return false;
                     }
-                    //if (!currentUser.CheckPassword(_password))
-                    //{
-                    //    MessageBox.Show($"Sign In failed for user {_email}. Reason:{Environment.NewLine}Wrong Password.");
-                    //    return false;
-                    //}
-              //      StationManager.CurrentUser = currentUser;
+                    if (currentUser.Password != StationManager.CurrentLocalUser.Password)
+                    {
+                        MessageBox.Show($"Sign In failed for user {StationManager.CurrentLocalUser.Email}. Reason:{Environment.NewLine} Wrong Password.");
+                        return false;
+                    }
+                    StationManager.CurrentUser = currentUser;
                     MessageBox.Show($"Sign In successful for user {StationManager.CurrentLocalUser.Email}.");
                     return true;
                 });

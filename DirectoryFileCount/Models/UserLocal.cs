@@ -7,7 +7,7 @@ namespace DirectoryFileCount.Models
     {
         #region Fields
         private string _email;
-        //private string _password;
+        private string _password;
         #endregion
 
         #region Properties
@@ -22,35 +22,35 @@ namespace DirectoryFileCount.Models
                 _email = value;
             }
         }
-        //private string Password
-        //{
-        //    get
-        //    {
-        //        return _password;
-        //    }
-        //}
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+        }
         #endregion
 
         #region Constructors
-        public UserLocal(string email) //, string password
+        public UserLocal(string email, string password)
         {
             _email = email;
-            //_password = password;
-            //SetPassword(password);
+            SetPassword(password);
         }
 
         public UserLocal()
         {
             _email = "";
-            //_password = "";
-            //SetPassword(password);
+            _password = "";
         }
         #endregion
 
-        //private void SetPassword(string password)
-        //{
-        //    //TODO Add encryption
-        //    _password = password;
-        //}
+        private void SetPassword(string password)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            var hash = System.Text.Encoding.ASCII.GetString(data);
+            _password = hash;
+        }
     }
 }

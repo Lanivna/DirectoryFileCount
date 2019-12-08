@@ -130,7 +130,7 @@ namespace DirectoryFileCount.ViewModels
                     var user = new User(_firstName, _lastName, _email, _password);
                     StationManager.Client.AddUser(user);
                     StationManager.CurrentUser = user;
-                    StationManager.CurrentLocalUser = new UserLocal(_email); //, _password
+                    StationManager.CurrentLocalUser = new UserLocal(_email, _password);
                 }
                 catch (Exception ex)
                 {
