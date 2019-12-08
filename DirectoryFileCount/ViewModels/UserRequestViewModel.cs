@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
@@ -103,20 +105,25 @@ namespace DirectoryFileCount.ViewModels
 
         private int CountFiles()
         {
-            //TODO
-            return 0;
+            //Counting files in directory
+            int fileCount = Directory.EnumerateFiles(PathToFolder, "*.*", SearchOption.AllDirectories).Count();
+            int numberOfFiles = fileCount;
+            return numberOfFiles;
         }
 
         private int CountSubFolders()
         {
-            //TODO
-            return 0;
+            //Counting subfolders
+            int subCount = Directory.EnumerateDirectories(PathToFolder, "*", SearchOption.AllDirectories).Count();
+            int numberOfSubFolders = subCount; 
+            return numberOfSubFolders;
         }
 
         private double CountTotalFilesSize()
         {
-            //TODO
-            return 0;
+            long length = Directory.GetFiles(PathToFolder, "*", SearchOption.AllDirectories).Sum(t => (new FileInfo(t).Length));
+            long totalSize = length;
+            return totalSize;
         }
      
     }
