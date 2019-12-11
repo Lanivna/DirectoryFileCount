@@ -48,6 +48,13 @@ namespace DirectoryFileCount
 
         private void btnShowHistory(object sender, RoutedEventArgs e)
         {
+            //UserRequestsHistoryView historyRequest = new UserRequestsHistoryView;
+            //stkHistory.Children.Add(historyRequest);
+        }
+
+        private void btnSignOutClick(object sender, RoutedEventArgs e)
+        {
+            //TODO: finish current session
 
         }
     }

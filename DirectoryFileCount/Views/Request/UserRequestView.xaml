@@ -6,6 +6,7 @@
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
+        Height="450" Width="800"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
@@ -18,5 +19,11 @@
         <Button Content="History" HorizontalAlignment="Left" Margin="30,175,0,0" VerticalAlignment="Top" Width="129" Height="40" Click="btnShowHistory"/>
         <TextBlock HorizontalAlignment="Left" Margin="30,264,0,0" TextWrapping="Wrap" Text="Here goes history nof requests..." VerticalAlignment="Top" Height="96" Width="377"/>
 
+        <Button x:Name="btnSignOut" Click="btnSignOutClick" Content="Sign Out" HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Width="100" Margin="0,23,30,0"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
     </Grid>
 </UserControl>
