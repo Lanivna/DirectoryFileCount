@@ -37,6 +37,12 @@ namespace DirectoryFileCount
              StationManager.CloseApp();
          }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SignInView loginWindow = new SignInView();
+            stkLogIn.Children.Add(loginWindow);
+        }
+
         /*     private void Log_In(object sender, RoutedEventArgs e)
              {
                  SignInView secondWindow = new SignInView();
