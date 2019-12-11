@@ -19,8 +19,8 @@
         </Grid.RowDefinitions>
         <ContentControl Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ContentControl>
         <TextBlock HorizontalAlignment="Left" Height="28" Margin="98,38,0,0" TextWrapping="Wrap" Text="Hi there! Please, log in to the system or create a new account;)" VerticalAlignment="Top" Width="628" FontSize="20" FontWeight="Bold"/>
-        <Button Content="I have an account" HorizontalAlignment="Left" Height="88" Margin="96,134,0,0" VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Button_Click_1"/>
-        <Button Content="Let's create one!" HorizontalAlignment="Left" Margin="473,134,0,0" Height="88"  VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Button_Click_2"/>
+        <Button Command="{Binding SignInCommand}" Content="I have an account" HorizontalAlignment="Left" Height="88" Margin="96,134,0,0" VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button Command="{Binding SignUpCommand}" Content="Let's create one!" HorizontalAlignment="Left" Margin="473,134,0,0" Height="88"  VerticalAlignment="Top" Width="217" FontSize="19" FontWeight="Bold" Click="Button_Click_2"/>
         <Button Content="Where is exit?" HorizontalAlignment="Left" Height="29" Margin="613,363,0,0" VerticalAlignment="Top" Width="150" Click="Button_Click_3"/>
         <StackPanel Name="stkLogIn" Grid.Row="1" />
     </Grid>

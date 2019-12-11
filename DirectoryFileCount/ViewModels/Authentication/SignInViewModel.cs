@@ -18,7 +18,7 @@ namespace DirectoryFileCount.ViewModels
 
         #region Commands
         private ICommand _signInCommand;
-        private ICommand _signUpCommand;
+  //    private ICommand _signUpCommand;
         private ICommand _closeCommand;
         #endregion
         #endregion
@@ -54,13 +54,13 @@ namespace DirectoryFileCount.ViewModels
             }
         }
 
-        public ICommand ToSignUpCommand
+   /*     public ICommand ToSignUpCommand
         {
             get
             {
                 return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation));
             }
-        }
+        } */
 
         public ICommand CloseCommand
         {
@@ -111,8 +111,6 @@ namespace DirectoryFileCount.ViewModels
                 return true;
             });
 
-            Email = "";
-            Password = "";
             LoaderManager.Instance.HideLoader();
             if (result)
                 NavigationManager.Instance.Navigate(ViewType.Main);
@@ -120,15 +118,11 @@ namespace DirectoryFileCount.ViewModels
 
         private void SignUpImplementation(object obj)
         {
-            Email = "";
-            Password = "";
             NavigationManager.Instance.Navigate(ViewType.SignUp);
         }
 
         private void CloseImplementation(object obj)
         {
-            Email = "";
-            Password = "";
             StationManager.CloseApp();
         }
 

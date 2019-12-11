@@ -36,7 +36,6 @@ namespace DirectoryFileCount
              base.OnClosing(e);
              StationManager.CloseApp();
          }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SignInView loginWindow = new SignInView();
@@ -54,5 +53,6 @@ namespace DirectoryFileCount
         {
             Application.Current.Shutdown();
         }
+
     }
 }

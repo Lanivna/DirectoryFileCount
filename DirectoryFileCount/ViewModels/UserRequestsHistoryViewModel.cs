@@ -5,7 +5,7 @@ using DirectoryFileCount.DBModels;
 
 namespace DirectoryFileCount.ViewModels
 {
-    class UserRequestHistoryViewModel : INotifyPropertyChanged
+    class UserRequestHistoryViewModel : BasicViewModel, INotifyPropertyChanged
     {
         private ObservableCollection<Request> _requests;
 
@@ -24,11 +24,5 @@ namespace DirectoryFileCount.ViewModels
             Requests = new ObservableCollection<Request>(StationManager.CurrentUser.Requests);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

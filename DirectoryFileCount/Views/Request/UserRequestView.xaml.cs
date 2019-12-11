@@ -15,7 +15,6 @@ namespace DirectoryFileCount
             DataContext = new UserRequestViewModel();
         }
 
-        //TO DO - change logic to ViewModel
         private void btnSelectFolderClick(object sender, RoutedEventArgs e)
         {
             WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
@@ -39,23 +38,11 @@ namespace DirectoryFileCount
                     {
                         String sDate = fileInfo.CreationTime.ToString("yyyy-MM-dd");
                         //Debug.WriteLine("#Debug: File: " + fileInfo.Name + "Date: " + sDate);
-                        //TO DO: count the size and amount of files + subfolders and show them in textblock of RequestWindow
                     }
                 }
             }
 
         }
 
-        private void btnShowHistory(object sender, RoutedEventArgs e)
-        {
-            //UserRequestsHistoryView historyRequest = new UserRequestsHistoryView;
-            //stkHistory.Children.Add(historyRequest);
-        }
-
-        private void btnSignOutClick(object sender, RoutedEventArgs e)
-        {
-            //TODO: finish current session
-
-        }
     }
 }

@@ -16,8 +16,7 @@
         <TextBox HorizontalAlignment="Center" Height="41" Margin="29,58,0,0" TextWrapping="Wrap" Text="Enter your email/phone number or whatever" VerticalAlignment="Top" Width="255" Opacity="0.5" FontSize="12" GotFocus="TextBox_GotFocus"/>
         <Label Content="Your Password:" HorizontalAlignment="Center" Margin="29,159,0,0" VerticalAlignment="Top" Width="137"/>
         <PasswordBox HorizontalAlignment="Center" Height="38" Margin="29,186,10,0" VerticalAlignment="Top" Width="255" Opacity="0.5"/>
-        <Button Content="All good!" HorizontalAlignment="Center" Height="44" Margin="0,154,0,20" Width="149" Click="Button_LogIn" />
+        <Button Command="{Binding SignInCommand}" Content="All good!" HorizontalAlignment="Center" Height="44" Margin="0,154,0,20" Width="149" Click="Button_LogIn" />
         <Button Content="Oops! Need to go back..." HorizontalAlignment="Right" Height="24" Width="200" Margin="0,360,61,65.6" Click="Button_GoBack" />
-
     </Grid>
 </UserControl>
