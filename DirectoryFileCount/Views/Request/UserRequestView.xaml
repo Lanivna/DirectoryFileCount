@@ -12,10 +12,10 @@
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
     <Grid>
-        <Button x:Name="btnSelectFolder" Click="btnSelectFolderClick"  Content="Check folder" HorizontalAlignment="Left" Height="40" Margin="30,23,0,0" VerticalAlignment="Top" Width="129"/>
+        <Button  Command="{Binding RequestInformationCommand}" x:Name="btnSelectFolder" Click="btnSelectFolderClick"  Content="Check folder" HorizontalAlignment="Left" Height="40" Margin="30,23,0,0" VerticalAlignment="Top" Width="129"/>
         <TextBox x:Name="tbxFolder" HorizontalAlignment="Left" Height="40" Margin="218,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266"/>
         <TextBlock HorizontalAlignment="Left" Height="60" Margin="38,98,0,0" TextWrapping="Wrap" Text="Number of files, subfolders and the total size" VerticalAlignment="Top" Width="446"/>
-        <Button Content="History" HorizontalAlignment="Left" Margin="30,175,0,0" VerticalAlignment="Top" Width="129" Height="40" Click="btnShowHistory"/>
+        <Button Command="{Binding RequestsHistory}" Content="History" HorizontalAlignment="Left" Margin="30,175,0,0" VerticalAlignment="Top" Width="129" Height="40" />
         <TextBlock HorizontalAlignment="Left" Margin="30,264,0,0" TextWrapping="Wrap" Text="Here goes history nof requests..." VerticalAlignment="Top" Height="96" Width="377"/>
 
     </Grid>

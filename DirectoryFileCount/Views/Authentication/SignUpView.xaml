@@ -25,7 +25,7 @@
         <Label Content="Confirm:" HorizontalAlignment="Left" Height="29" Margin="404,170,0,0" VerticalAlignment="Top" Width="130" FontSize="20"/>
         <PasswordBox HorizontalAlignment="Left" Height="30" Margin="539,170,0,0" VerticalAlignment="Top" Width="191" BorderBrush="Gray" BorderThickness="0.5"/>
 
-        <Button Content="Create my account!" HorizontalAlignment="Left" Height="45" Margin="322,341,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button Command="{Binding SignUpCommand}" Content="Create my account!" HorizontalAlignment="Left" Height="45" Margin="322,341,0,0" VerticalAlignment="Top" Width="212"/>
 
     </Grid>
 </UserControl>

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using DirectoryFileCount.Managers;
+using DirectoryFileCount.Navigation;
 
 namespace DirectoryFileCount.ViewModels
 {
-    class UserRequestViewModel : INotifyPropertyChanged
+    class UserRequestViewModel : BasicViewModel, INotifyPropertyChanged
     {
         private string _pathToFolder;
         private int _quantityOfFiles;
@@ -18,6 +19,7 @@ namespace DirectoryFileCount.ViewModels
         private double _totalFilesSize;
 
         private ICommand _requestInformationCommand;
+        private ICommand _viewHistoryCommand;
 
         public string PathToFolder
         {
@@ -68,6 +70,15 @@ namespace DirectoryFileCount.ViewModels
             }
         }
 
+        public ICommand ViewHistoryCommand
+        {
+            get { return _viewHistoryCommand ?? (_viewHistoryCommand = new RelayCommand<object>(ViewHistoryImplementation)); }
+        }
+
+        private void ViewHistoryImplementation(object obj)
+        {
+            NavigationManager.Instance.Navigate(ViewType.History);
+        }
         private async void RequestInformationImplementation(object obj)
         {
             LoaderManager.Instance.ShowLoader();
@@ -93,13 +104,6 @@ namespace DirectoryFileCount.ViewModels
                 return true;
             });
             LoaderManager.Instance.HideLoader();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private int CountFiles()

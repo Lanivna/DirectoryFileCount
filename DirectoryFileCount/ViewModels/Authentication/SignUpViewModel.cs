@@ -22,7 +22,7 @@ namespace DirectoryFileCount.ViewModels
 
         #region Commands
         private ICommand _signUpCommand;
-        private ICommand _signInCommand;
+       // private ICommand _signInCommand;
         private ICommand _closeCommand;
         #endregion
         #endregion
@@ -75,13 +75,13 @@ namespace DirectoryFileCount.ViewModels
             }
         }
 
-        public ICommand SignInCommand
+      /*  public ICommand SignInCommand
         {
             get
             {
                 return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation));
             }
-        }
+        } */
 
         public ICommand CloseCommand
         {

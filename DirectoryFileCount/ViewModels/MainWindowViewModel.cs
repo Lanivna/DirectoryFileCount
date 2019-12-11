@@ -6,13 +6,38 @@ using DirectoryFileCount.Navigation;
 
 namespace DirectoryFileCount.ViewModels
 {
-    internal class MainWindowViewModel : BasicViewModel
+    internal class MainWindowViewModel : BasicViewModel, ILoaderOwner
     {
         private Visibility _menuVisibility = Visibility.Collapsed;
-        private ICommand _showMenuCommand;
-        private ICommand _viewHistoryCommand;
-        private ICommand _logOutCommand;
-        private ICommand _closeCommand;
+     // private ICommand _showMenuCommand;
+     // private ICommand _viewHistoryCommand;
+     // private ICommand _logOutCommand;
+     // private ICommand _closeCommand;
+
+        private ICommand _signInCommand;
+        private ICommand _signUpCommand;
+
+        private Visibility _loaderVisibility = Visibility.Hidden;
+        private bool _isControlEnabled = true;
+
+        public Visibility LoaderVisibility
+        {
+            get { return _loaderVisibility; }
+            set
+            {
+                _loaderVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool IsControlEnabled
+        {
+            get { return _isControlEnabled; }
+            set
+            {
+                _isControlEnabled = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string CurrentUser
         {
@@ -34,23 +59,27 @@ namespace DirectoryFileCount.ViewModels
 
         public MainWindowViewModel()
         {
+            LoaderManager.Instance.Initialize(this);
+        }
 
-        }
-        public ICommand ShowMenuCommand
+        public ICommand SignInCommand
         {
-            get { return _showMenuCommand ?? (_showMenuCommand = new RelayCommand<object>(ShowMenuImplementation)); }
+            get { return _signInCommand ?? (_signInCommand = new RelayCommand<object>(SignInImplementation)); }
         }
-        public ICommand ViewHistoryCommand
+
+        public ICommand SignUpCommand
         {
-            get { return _viewHistoryCommand ?? (_viewHistoryCommand = new RelayCommand<object>(ViewHistoryImplementation)); }
+            get { return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation)); }
         }
-        public ICommand LogOutCommand
+
+        private void SignInImplementation(object obj)
         {
-            get { return _logOutCommand ?? (_logOutCommand = new RelayCommand<object>(LogOutImplementation)); }
+            NavigationManager.Instance.Navigate(ViewType.SignIn);
         }
-        public ICommand CloseCommand
+
+        private void SignUpImplementation(object obj)
         {
-            get { return _closeCommand ?? (_closeCommand = new RelayCommand<object>(CloseImplementation)); }
+            NavigationManager.Instance.Navigate(ViewType.SignUp);
         }
 
         private void ShowMenuImplementation(object obj)

@@ -37,19 +37,7 @@ namespace DirectoryFileCount
              StationManager.CloseApp();
          }
 
-        /*     private void Log_In(object sender, RoutedEventArgs e)
-             {
-                 SignInView secondWindow = new SignInView();
-                 //secondWindow.Show();
-             }
-
-             private void Create_Account(object sender, RoutedEventArgs e)
-             {
-                 SignUpView thirdWindow = new SignUpView();
-                // thirdWindow.Show();
-             }
-
-             private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
+        /*   private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
              {
                  this.Close();
              } */
