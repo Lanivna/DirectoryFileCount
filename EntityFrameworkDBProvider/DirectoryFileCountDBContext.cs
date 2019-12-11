@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using DirectoryFileCount.EntityFrameworkDBProvider.Migrations;
 using DirectoryFileCount.EntityFrameworkDBProvider.ModelConfiguration;
-using User = DirectoryFileCount.DBModels.User;
+using DirectoryFileCount.DBModels;
 
 namespace DirectoryFileCount.EntityFrameworkDBProvider
 {
@@ -14,6 +14,7 @@ namespace DirectoryFileCount.EntityFrameworkDBProvider
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Request> Requests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

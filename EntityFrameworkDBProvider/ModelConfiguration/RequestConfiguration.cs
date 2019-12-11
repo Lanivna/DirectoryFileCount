@@ -14,7 +14,6 @@ namespace DirectoryFileCount.EntityFrameworkDBProvider.ModelConfiguration
             Property(d => d.QuantityOfFiles).HasColumnName("QuantityOfFiles").IsRequired();
             Property(d => d.QuantityOfFiles).HasColumnName("QuantityOfSubFolders").IsRequired();
             Property(d => d.DateOfRequest).HasColumnName("DateOfRequest").HasColumnType("datetime2").IsRequired();
-
         }
     }
 }

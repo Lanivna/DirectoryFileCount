@@ -29,10 +29,6 @@ namespace DirectoryFileCount.Server.DirectoryFileCountWCFServer
         {
 #if DEBUG
             RequestAdditionalTime(120 * 1000);
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    Thread.Sleep(1000);
-            //}
 #endif
             _serviceHost?.Close();
             try

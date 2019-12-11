@@ -58,30 +58,10 @@ namespace DirectoryFileCount.Server.DirectoryFileCountSimulatorServerImplementat
         {
             using (var context = new DirectoryFileCountDBContext())
             {
-              //  request.DeleteDatabaseValues();
-              //  context.Requests.Add(request);
+                context.Requests.Add(request);
                 context.SaveChanges();
             }
         } 
 
-        /* public static void SaveRequest(Request request)
-         {
-             using (var context = new DirectoryFileCountDBContext())
-             {
-                 context.Entry(request).State = EntityState.Modified;
-                 context.SaveChanges();
-             }
-         } */
-
-        /* public static void DeleteRequest(Request selectedRequest)
-         {
-             using (var context = new DirectoryFileCountDBContext())
-             {
-                 selectedRequest.DeleteDatabaseValues();
-                 context.Requests.Attach(selectedRequest);
-                 context.Requests.Remove(selectedRequest);
-                 context.SaveChanges();
-             }
-         }*/
     }
 }
