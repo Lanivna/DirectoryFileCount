@@ -17,6 +17,7 @@ namespace DirectoryFileCount.ViewModels
         private string _password;
 
         #region Commands
+        private ICommand _mainMenuCommand;
         private ICommand _signInCommand;
   //    private ICommand _signUpCommand;
         private ICommand _closeCommand;
@@ -54,13 +55,21 @@ namespace DirectoryFileCount.ViewModels
             }
         }
 
-   /*     public ICommand ToSignUpCommand
+        public ICommand MainMenuCommand
         {
             get
             {
-                return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation));
+                return _mainMenuCommand ?? (_mainMenuCommand = new RelayCommand<object>(MainMenuImplementation)); 
             }
-        } */
+        }
+
+        /*     public ICommand ToSignUpCommand
+             {
+                 get
+                 {
+                     return _signUpCommand ?? (_signUpCommand = new RelayCommand<object>(SignUpImplementation));
+                 }
+             } */
 
         public ICommand CloseCommand
         {
@@ -119,6 +128,11 @@ namespace DirectoryFileCount.ViewModels
         private void SignUpImplementation(object obj)
         {
             NavigationManager.Instance.Navigate(ViewType.SignUp);
+        }
+
+        private void MainMenuImplementation(object obj)
+        {
+            NavigationManager.Instance.Navigate(ViewType.Main);
         }
 
         private void CloseImplementation(object obj)

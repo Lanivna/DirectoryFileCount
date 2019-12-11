@@ -9,7 +9,7 @@ using DirectoryFileCount.ViewModels;
 
 namespace DirectoryFileCount
 {
-    public partial class MainWindow : Window, IContentOwner, INavigatable
+    public partial class MainWindow : UserControl, IContentOwner, INavigatable
     {
         public ContentControl ContentControl
          {
@@ -31,11 +31,11 @@ namespace DirectoryFileCount
              NavigationManager.Instance.Initialize(new InitializationNavigationModel(this));
          }
 
-         protected override void OnClosing(CancelEventArgs e)
+     /*    protected override void OnClosing(CancelEventArgs e)
          {
              base.OnClosing(e);
              StationManager.CloseApp();
-         }
+         }*/
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SignInView loginWindow = new SignInView();

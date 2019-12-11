@@ -1,12 +1,10 @@
-﻿<Window x:Class="DirectoryFileCount.MainWindow"
+﻿<UserControl x:Class="DirectoryFileCount.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
-        Title="YourFileCountApp" Height="450" Width="800"
-        Icon="icon.ico"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
@@ -24,4 +22,4 @@
         <Button Content="Where is exit?" HorizontalAlignment="Left" Height="29" Margin="613,363,0,0" VerticalAlignment="Top" Width="150" Click="Button_Click_3"/>
         <StackPanel Name="stkLogIn" Grid.Row="1" />
     </Grid>
-</Window>
+</UserControl>
