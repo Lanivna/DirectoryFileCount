@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
+        Height="450" Width="800"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="67,64,0,0" TextWrapping="Wrap" Text="Your login:" VerticalAlignment="Top" Width="170"/>
-        <TextBox HorizontalAlignment="Left" Height="41" Margin="67,87,0,0" TextWrapping="Wrap" Text="Enter your email/phone number or whatever" VerticalAlignment="Top" Width="305" Opacity="0.5" FontSize="12" GotFocus="TextBox_GotFocus"/>
-        <Label Content="Your Password:" HorizontalAlignment="Left" Margin="67,159,0,0" VerticalAlignment="Top" Width="137"/>
-        <PasswordBox HorizontalAlignment="Left" Height="38" Margin="67,186,0,0" VerticalAlignment="Top" Width="305" Opacity="0.5"/>
-        <Button Command="{Binding SignInCommand}" Content="All good!" HorizontalAlignment="Left" Height="44" Margin="158,264,0,0" VerticalAlignment="Top" Width="149" />
-
-
+        <TextBlock HorizontalAlignment="Center" Height="18" Margin="346,35,314,0" TextWrapping="Wrap" Text="Your login:" VerticalAlignment="Top" Width="140"/>
+        <TextBox HorizontalAlignment="Center" Height="41" Margin="29,58,0,0" TextWrapping="Wrap" Text="Enter your email/phone number or whatever" VerticalAlignment="Top" Width="255" Opacity="0.5" FontSize="12" GotFocus="TextBox_GotFocus"/>
+        <Label Content="Your Password:" HorizontalAlignment="Center" Margin="29,159,0,0" VerticalAlignment="Top" Width="137"/>
+        <PasswordBox HorizontalAlignment="Center" Height="38" Margin="29,186,10,0" VerticalAlignment="Top" Width="255" Opacity="0.5"/>
+        <Button Command="{Binding SignInCommand}" Content="All good!" HorizontalAlignment="Center" Height="44" Margin="0,154,0,20" Width="149" Click="Button_LogIn" />
+        <Button Content="Oops! Need to go back..." HorizontalAlignment="Right" Height="24" Width="200" Margin="0,360,61,65.6" Click="Button_GoBack" />
     </Grid>
 </UserControl>

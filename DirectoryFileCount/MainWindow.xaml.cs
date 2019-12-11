@@ -36,10 +36,23 @@ namespace DirectoryFileCount
              base.OnClosing(e);
              StationManager.CloseApp();
          }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SignInView loginWindow = new SignInView();
+            stkLogIn.Children.Add(loginWindow);
+        }
 
-        /*   private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
-             {
-                 this.Close();
-             } */
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SignUpView signupWindow = new SignUpView();
+            stkLogIn.Children.Add(signupWindow);
+        }
+
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }
