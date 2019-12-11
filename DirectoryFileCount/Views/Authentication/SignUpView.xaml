@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirectoryFileCount"
         mc:Ignorable="d"
+        Height="450" Width="800"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignBackground}"
         TextElement.FontWeight="Medium"
@@ -25,7 +26,9 @@
         <Label Content="Confirm:" HorizontalAlignment="Left" Height="29" Margin="404,170,0,0" VerticalAlignment="Top" Width="130" FontSize="20"/>
         <PasswordBox HorizontalAlignment="Left" Height="30" Margin="539,170,0,0" VerticalAlignment="Top" Width="191" BorderBrush="Gray" BorderThickness="0.5"/>
 
-        <Button Content="Create my account!" HorizontalAlignment="Left" Height="45" Margin="322,341,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button Content="Create my account!" HorizontalAlignment="Center" Height="45" Margin="0,281,0,0" VerticalAlignment="Top" Width="212" Click="Button_Click_NewUser"/>
+        <Button Content="Oops! Need to go back..." HorizontalAlignment="Right" Height="24" Width="200" Margin="0,360,61,65.6" Click="Button_GoBack" />
+
 
     </Grid>
 </UserControl>

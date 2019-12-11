@@ -43,21 +43,16 @@ namespace DirectoryFileCount
             stkLogIn.Children.Add(loginWindow);
         }
 
-        /*     private void Log_In(object sender, RoutedEventArgs e)
-             {
-                 SignInView secondWindow = new SignInView();
-                 //secondWindow.Show();
-             }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SignUpView signupWindow = new SignUpView();
+            stkLogIn.Children.Add(signupWindow);
+        }
 
-             private void Create_Account(object sender, RoutedEventArgs e)
-             {
-                 SignUpView thirdWindow = new SignUpView();
-                // thirdWindow.Show();
-             }
 
-             private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
-             {
-                 this.Close();
-             } */
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
